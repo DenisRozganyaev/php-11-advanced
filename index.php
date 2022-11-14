@@ -1,4 +1,2 @@
 <?php
-if (true) {
-  phpinfo();
-}
+require __DIR__ . '/output.php';
