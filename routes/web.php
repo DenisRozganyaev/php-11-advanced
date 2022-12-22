@@ -15,10 +15,10 @@
 // /parks/4/edit - edit
 // /parks/4/update - update
 
-$router->add('parks/{id:\d+}/update', [
-    'controller' => 'Controller',
-    'action' => 'update',
-    'method' => 'POST'
+$router->add('parks/{id:\d+}/show', [
+    'controller' => \App\Controllers\ParksController::class,
+    'action' => 'show',
+    'method' => 'GET'
 ]);
 
 //$router->add('parks/{slug:\w+}/update', [
