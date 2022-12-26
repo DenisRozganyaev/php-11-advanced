@@ -58,6 +58,17 @@ trait Queryable
         ];
     }
 
+    public static function findBy(string $column, $value)
+    {
+        $query = "SELECT * FROM " . static::$tableName . " WHERE {$column}=:{$column}";
+
+        $query = Db::connect()->prepare($query);
+        $query->bindParam($column, $value);
+        $query->execute();
+
+        return $query->fetchObject(static::class);
+    }
+
     protected static function resetQuery()
     {
         static::$query = "";

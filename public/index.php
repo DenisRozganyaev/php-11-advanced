@@ -5,6 +5,10 @@ use Config\Config;
 require_once dirname(__DIR__) . '/Config/constants.php';
 require_once BASE_DIR . '/vendor/autoload.php';
 
+if (!session_id()) {
+    session_start();
+}
+
 $dotenv = \Dotenv\Dotenv::createUnsafeImmutable(BASE_DIR);
 $dotenv->load();
 

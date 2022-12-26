@@ -5,7 +5,10 @@
       "Config\\": "Config/",
       "Core\\": "Core/",
       "App\\": "App/"
-    }
+    },
+    "files": [
+      "Config/helpers.php"
+    ]
   },
   "require": {
     "larapack/dd": "^1.1",
