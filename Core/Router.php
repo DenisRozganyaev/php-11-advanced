@@ -37,8 +37,6 @@ class Router
             if ($controller->before($action)) {
                 call_user_func_array([$controller, $action], $this->params);
                 $controller->after($action);
-            } else {
-                dd('error');
             }
         }
     }
