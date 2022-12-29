@@ -10,8 +10,8 @@ class LoginValidator extends Base
     ];
 
     protected array $errors = [
-        'email_error' => 'Email or password is incorrect',
-        'password_error' => 'Email or password is incorrect',
+        'email' => 'Email or password is incorrect',
+        'password' => 'Email or password is incorrect',
     ];
 
     public function verifyPassword(string $formPass, $userPass): bool
