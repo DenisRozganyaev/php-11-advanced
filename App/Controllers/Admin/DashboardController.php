@@ -2,10 +2,12 @@
 
 namespace App\Controllers\Admin;
 
+use Core\View;
+
 class DashboardController extends BaseController
 {
     public function index()
     {
-        dd(__CLASS__, __METHOD__);
+        View::render('admin/dashboard/index');
     }
 }

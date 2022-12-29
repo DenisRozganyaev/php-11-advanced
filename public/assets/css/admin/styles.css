@@ -1,0 +1,11 @@
+body {
+    height: 100vh;
+    padding: 0;
+}
+
+.admin-navigation ul li a,
+.admin-navigation a,
+.admin-navigation span,
+.admin-navigation .btn {
+    color: #fff;
+}

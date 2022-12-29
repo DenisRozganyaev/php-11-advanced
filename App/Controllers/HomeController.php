@@ -3,11 +3,12 @@
 namespace App\Controllers;
 
 use Core\Controller;
+use Core\View;
 
 class HomeController extends Controller
 {
     public function index()
     {
-        dd(__CLASS__, __METHOD__);
+        View::render('home/index');
     }
 }

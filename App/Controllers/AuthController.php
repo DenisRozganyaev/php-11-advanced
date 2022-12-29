@@ -12,6 +12,8 @@ use App\Services\Users\CreateService;
 
 class AuthController extends Controller
 {
+    const AUTH_ACTIONS = ['logout'];
+
     public function login()
     {
         Session::destroy();
@@ -45,5 +47,20 @@ class AuthController extends Controller
         }
 
         View::render('auth/login', $this->getErrors($fields, $validator, ['email_error' => 'Email already exists']));
+    }
+
+    public function logout()
+    {
+        Session::destroy();
+        redirect('login');
+    }
+
+    public function before(string $action): bool
+    {
+        if (Session::check() && !in_array($action, self::AUTH_ACTIONS)) {
+            redirect();
+        }
+
+        return parent::before($action);
     }
 }
